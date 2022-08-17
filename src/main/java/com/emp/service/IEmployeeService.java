@@ -14,5 +14,7 @@ public interface IEmployeeService {
 	Optional<Employee> getEmployeeById(Integer id);
 	
 	public void deleteEmployee(Integer id);
+	
+	public void deleteAllEmployee();
 
 }
