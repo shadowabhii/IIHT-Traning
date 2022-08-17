@@ -14,37 +14,28 @@ import com.emp.service.IEmployeeService;
 
 @RestController
 public class EmployeeController {
-	
+
 	@Autowired
 	IEmployeeService employeeService;
-	
+
 	@RequestMapping("/hello")
-	public String hello()
-	{
+	public String hello() {
 		return "Hello World";
-		
+
 	}
-	
+
 	@PostMapping("/employee")
-	Integer createEmployee(@RequestBody Employee employee)
-	{
-		
+	Integer createEmployee(@RequestBody Employee employee) {
+
 		Integer id = employeeService.saveEmployee(employee);
 		System.out.println(id);
 		return id;
-		
-		
-		
+
 	}
-	
 
 	@GetMapping("/allemployees")
-	public List<Employee> getEmployee()
-	{
+	public List<Employee> getEmployee() {
 		return employeeService.getAllEmployees();
 	}
-	
-	
-	
 
 }
